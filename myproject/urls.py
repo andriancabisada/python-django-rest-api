@@ -17,6 +17,7 @@ Including another URLconf
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from myproject.views import CategoryViewSet, ProductViewSet
+from django.views.generic import TemplateView
 
 router = DefaultRouter()
 router.register(r'categories', CategoryViewSet)
@@ -24,4 +25,7 @@ router.register(r'products', ProductViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('category/', TemplateView.as_view(template_name='category.html'),
+         name='category'),
+    path('product/', TemplateView.as_view(template_name='product.html'), name='product'),
 ]
