@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     'myapp',
+    'myapp',
 ]
 
 MIDDLEWARE = [
@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'python-django-rest-api',
-        'USER': 'admin',
-        'PASSWORD': '',
+        'USER': 'user',
+        'PASSWORD': 'password311',
         'HOST': 'localhost',  # Change if your MySQL server is on a different host
         'PORT': '3306',       # MySQL default port
     }
@@ -135,3 +135,9 @@ REST_FRAMEWORK = {
     ],
     # ...
 }
+
+
+#session
+SESSION_COOKIE_SECURE = True 
+SESSION_COOKIE_HTTPONLY = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
